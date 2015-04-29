@@ -1,0 +1,39 @@
+<div ng-repeat = 'joke in joke'>
+<div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"></h3>
+          </div>
+          <div class="panel-body">
+            <h4>{{joke.setup.text}}</h4>
+            <p>~{{joke.setup.author}}</p>
+          </div>
+          <!-- List group -->
+          <ul class="list-group">
+            <li class="list-group-item">
+              <h5>{{joke.punchline.text}}</h5>
+              <p class=''>~ {{joke.punchline.author}} 
+              <span class="glyphicon glyphicon-chevron-up , pull-right" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-chevron-down , pull-right" aria-hidden="true"></span> 
+              <span ng-click='jokeCtrl.add()' class="glyphicon glyphicon-user , pull-left" aria-hidden="true"></span> 
+              <span class='pull-right'>{{punchline.likes}}</span></p>
+              &nbsp;                
+            </li>
+         </ul>
+</div>
+        <form >
+          <div class="panel panel-default">
+            <li class="list-group-item">
+              <h5></h5>
+              <p class='pull-right'>~ <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span> <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></p>
+              &nbsp;                
+            </li>
+            <div class="panel-body">
+              <textarea class="form-control" rows="3" ></textarea>
+            </div>
+            <div class="panel-footer">
+              <input type="submit" class="btn btn-success" name="" value="Add"/>
+              &nbsp;
+            </div>
+          </div>
+    </form>
+</div>
