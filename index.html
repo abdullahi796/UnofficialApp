@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app='jokeApp'>
+    <head>
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>  
+        
+        <!-- AngularJS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        
+        <!-- Firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
+        
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+        
+        <link rel="stylesheet" href="main.css" type="text/css" />
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="cloud.js"></script> 
+        <script type="text/javascript" src="directive/joke.js"></script>
+        <title> </title>
+    </head>
+    <body>
+      <div class='joke col-md-6 col-md-offset-3' ng-controller='jokeController as jokeCtrl'>
+         <div class="panel panel-default" ng-repeat = 'joke in joke'>
+          <div class="panel-heading">
+            <h3 class="panel-title"></h3>
+          </div>
+          <div class="panel-body">
+            <h4>{{joke.setup.text}}</h4>
+            <p>~{{joke.setup.author}}</p>
+          </div>
+          <!-- List group -->
+          <ul class="list-group">
+            <li class="list-group-item">
+              <h5>{{joke.punchline.text}}</h5>
+              <p class=''>~ {{joke.punchline.author}} 
+              <span class="glyphicon glyphicon-chevron-up , pull-right" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-chevron-down , pull-right" aria-hidden="true"></span> 
+              <span ng-click='jokeCtrl.add()' class="glyphicon glyphicon-user , pull-left" aria-hidden="true"></span> 
+              <span class='pull-right'>{{punchline.likes}}</span></p>
+              &nbsp;                
+            </li>
+          </ul>
+        </div>
+          <h1>{{joke.setup.author}}</h1>
+      </div>
+    </body>
+</html>
